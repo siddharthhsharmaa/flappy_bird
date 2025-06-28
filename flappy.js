@@ -65,6 +65,7 @@ window.onload = () => {
   requestAnimationFrame(update);
   setInterval(placePipe, 2000);
   document.addEventListener("keydown", moveBird);
+    document.addEventListener("mousedown", moveBird);
 };
 
 function update() {
@@ -149,7 +150,7 @@ function placePipe() {
 }
 
 function moveBird(e) {
-  if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
+  if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX" || e.type === "mousedown" ) {
     velocityY = -6;
     wingSound.play();
     swooshSound.play();
